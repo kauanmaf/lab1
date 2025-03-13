@@ -31,10 +31,11 @@ document.body.prepend(nav);
 
 for (let p of pages) {
     let url = p.url;
-    let title = p.title;
     if (!ARE_WE_HOME && !url.startsWith("http")) {
         url = "../" + url;
     }
+    let title = p.title;
+    
     // Create link and add it to nav
     let a = document.createElement("a");
     a.href = url;
@@ -43,9 +44,11 @@ for (let p of pages) {
         a.classList.add("current");
     }
     
-    if (a.host != location.host){
-        a.setAttribute("target", "_blank")
-    }
+    if (a.host != location.host)
+        {
+            a.target = "_blank";
+        }
+    
 
     nav.append(a);
 }
