@@ -43,7 +43,7 @@ for (let p of pages) {
         a.classList.add("current");
     }
     
-    if (a.hsot != location.host){
+    if (a.host != location.host){
         a.setAttribute("target", "_blank")
     }
 
